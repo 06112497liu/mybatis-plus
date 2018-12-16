@@ -1,0 +1,24 @@
+######################## jdbc ########################
+spring:
+  datasource:
+    druid:
+      db-type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: 123456
+      url: jdbc:mysql://localhost:3306/dubbo?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true
+      initial-size: 5
+      max-active: 20
+      min-idle: 5
+
+######################## mybatis-plus ########################
+mybatis-plus:
+  type-enums-package: com.lwb.**.enums
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      field-strategy: not_null # 实体插入数据库时，为null的字段不会生成到sql中
+
+
+
